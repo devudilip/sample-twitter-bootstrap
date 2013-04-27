@@ -16,7 +16,7 @@
     <% @pages.each do |page| %>
       <tr>
         <td><%= link_to page.id, page_path(page) %></td>
-        <td><%= page.page %></td>
+        <td><%= link_to page.page, page_path(page) %></td>
         <td><%= page.index_no %></td>
         <td><%=l page.created_at %></td>
         <td>
@@ -35,4 +35,6 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_page_path,
+            :class => 'btn btn-primary' %>
+<%= link_to "users",users_path,
             :class => 'btn btn-primary' %>
